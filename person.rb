@@ -1,6 +1,9 @@
-class Person
+require_relative './nameable'
+
+class Person < Nameable
   def initialize(age, name = 'unknown', parent_permission: true)
-    @id = Random(1..10_000)
+    @id = rand(1..10_000)
+    super()
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -11,6 +14,10 @@ class Person
 
   def can_use_services?
     of_age? || parent_permission ? true : false
+  end
+
+  def correct_name
+    @name
   end
 
   private
