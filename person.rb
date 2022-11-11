@@ -10,7 +10,7 @@ class Person < Nameable
     @rentals = object.new
   end
 
-  attr_accessor :name, :age, :id
+  attr_accessor :name, :age, :id, rentals
 
   def can_use_services?
     of_age? || parent_permission ? true : false

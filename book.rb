@@ -5,7 +5,7 @@ class Book
     @rentals = object.new
   end
 
-  attr_accessor :title, :author
+  attr_accessor :title, :author, rentals
 
   def add_rental(rental)
     rentals[rental.id] = rental

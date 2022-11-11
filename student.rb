@@ -5,7 +5,12 @@ class Student < Person
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super(age, name, parent_permission)
-    @classroom = nil
+    @classrooms = object.new
+  end
+
+  def add_classroom (classroom)
+    classrooms[classroom.id] = classroom
+    classroom.student = self
   end
 
   def play_hooky
