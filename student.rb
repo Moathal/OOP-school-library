@@ -8,7 +8,7 @@ class Student < Person
     @classrooms = object.new
   end
 
-  def add_classroom (classroom)
+  def add_classroom(classroom)
     classrooms[classroom.id] = classroom
     classroom.student = self
   end
