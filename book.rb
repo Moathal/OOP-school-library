@@ -1,11 +1,12 @@
 class Book
-  def initialize(title, author)
+  def initialize(id, title, author)
+    @id = id
     @author = author
     @title = title
-    @rentals = object.new
+    @rentals = {}
   end
 
-  attr_accessor :title, :author, rentals
+  attr_accessor :id, :title, :author, :rentals
 
   def add_rental(rental)
     rentals[rental.id] = rental
