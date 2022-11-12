@@ -1,16 +1,16 @@
 require_relative './nameable'
 
 class Person < Nameable
-  def initialize(id, age, name = 'unknown', parent_permission: true)
-    @id = id
+  def initialize(id, age, name: 'unknown', parent_permission: true)
     super()
+    @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
-    @rentals = object.new
+    @rentals = {}
   end
 
-  attr_accessor :name, :age, :id, rentals
+  attr_accessor :name, :age, :id, :rentals
 
   def can_use_services?
     of_age? || parent_permission ? true : false
