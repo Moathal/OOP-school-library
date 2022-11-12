@@ -1,7 +1,7 @@
 class Classroom
   def initialize(label)
     @label = label
-    @students = object.new
+    @students = {}
   end
   attr_accessor :label
 
